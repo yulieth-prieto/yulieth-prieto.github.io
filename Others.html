@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Others - Yulieth Prieto-M</title>
+  <link rel="stylesheet" href="yu-math.css">
+</head>
+<body>
+  <nav class="menu-secciones">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="talks.html">Seminars & conferences</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="Others.html">O.t.r.o.s</a></li>
+    </ul>
+  </nav>
+  <div class="contenedor-principal">
+    <div class="side-column">
+      
+    </div>
+    <div class="main-column">
+      <div class="carousel-container">
+        <div class="carousel">
+          <div class="carousel-slide">
+            <img src="src/images/Yu-10.jpg" alt="Photo 1">
+          </div>
+          <div class="carousel-slide">
+            <img src="src/images/hear-mathematician.jpg" alt="Photo 2">
+          </div>
+        </div>
+        <button class="carousel-button prev">&#10094;</button>
+        <button class="carousel-button next">&#10095;</button>
+      </div>
+    </div>
+    <div class="contact-column">
+      <address>
+        <h2>Contact</h2>
+        <h3>Email addresses</h3> 
+        yulieth[dot]prieto[at]uc[dot]cl<br>
+        yprieto[dot]math[at]outlook[dot]com<br>
+        <h3>Mailing address</h3>
+        Faculty of mathematics<br>
+        Universidad Católica de Chile<br>
+        Vicuña Mackenna 4860, Macul, Chile<br>
+        Santiago de Chile (Chile)<br>
+        Office 115.
+      </address>
+    </div>
+  </div>
+  <script>
+  const carousel = document.querySelector('.carousel');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const prevButton = document.querySelector('.prev');
+  const nextButton = document.querySelector('.next');
+  let currentSlide = 0;
+
+  function updateCarousel() {
+    const offset = currentSlide * -100;
+    carousel.style.transform = `translateX(${offset}%)`;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateCarousel();
+  }
+
+  // Add event listeners
+  nextButton.addEventListener('click', nextSlide);
+  prevButton.addEventListener('click', prevSlide);
+
+  // Optional: Auto-advance slides every 5 seconds
+  setInterval(nextSlide, 5000);
+
+  // Initialize first slide
+  updateCarousel();
+</script>
+</body>
+</html>
