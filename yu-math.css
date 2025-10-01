@@ -330,6 +330,8 @@ a:hover {
     margin-left: 0;
     margin-right: 0;
     padding: 0;
+  width: 100%; /* Fuerza columnas apiladas y ocupando todo el ancho */
+  display: block; /* Asegura que cada columna sea un bloque apilado */
   }
   .bio-text {
     padding: 16px 8px;
