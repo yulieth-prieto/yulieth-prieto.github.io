@@ -254,3 +254,105 @@ a:hover {
 .next {
   right: 10px;
 }
+
+/* Escalabilidad: Media Queries para tablet, celular y escritorio */
+
+/* ===========================
+   @escritorio (Desktop ≥ 1024px)
+   =========================== */
+@media (min-width: 1024px) {
+  /* Puedes personalizar estilos para pantallas grandes aquí */
+  .contenedor-principal {
+    flex-direction: row;
+    gap: 40px;
+    padding-top: 40px;
+  }
+  .main-column {
+    max-width: 800px;
+  }
+  .side-column {
+    max-width: 420px;
+    min-width: 340px;
+  }
+  .contact-column {
+    max-width: 320px;
+    min-width: 260px;
+  }
+}
+
+/* ===========================
+   @tablet (Tablet 600px - 1023px)
+   =========================== */
+@media (min-width: 600px) and (max-width: 1023px) {
+  /* Ajusta el layout para tablet */
+  .contenedor-principal {
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 24px;
+    align-items: stretch;
+  }
+  .side-column,
+  .contact-column {
+    max-width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .main-column {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .photo {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* ===========================
+   @celular (Mobile ≤ 599px)
+   =========================== */
+@media (max-width: 599px) {
+  /* Layout vertical, fuentes más pequeñas, menos padding */
+  body {
+    padding: 8px;
+  }
+  .contenedor-principal {
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 8px;
+    align-items: stretch;
+  }
+  .main-column,
+  .side-column,
+  .contact-column {
+    max-width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+  }
+  .bio-text {
+    padding: 16px 8px;
+    font-size: 1em;
+  }
+  .photo {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .photo img {
+    max-width: 100%;
+    max-height: 300px;
+  }
+  .menu-secciones {
+    padding: 10px 0;
+    font-size: 1em;
+  }
+  .menu-secciones ul {
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+  .contact-column address {
+    font-size: 0.95em;
+    padding: 0;
+  }
+}
